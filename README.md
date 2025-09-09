@@ -14,7 +14,7 @@ Este é um projeto web desenvolvido como avaliação para a disciplina de Tópic
 1.  **Clone o repositório:**
     ```bash
     git clone https://github.com/marcojobim/AMTracker.git
-    cd mytracker
+    cd AMTrakcer
     ```
 
 2.  **Configure o ambiente:**
