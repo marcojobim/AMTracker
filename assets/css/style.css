@@ -1,0 +1,335 @@
+:root {
+    /* NOVA PALETA: Tema "Moderno e Focado" (Azul) */
+    --cor-primaria: #3D5A80;
+    --cor-fundo: #F0F2F5;
+    --cor-fundo-card: #FFFFFF;
+    --cor-texto: #293241;
+    --cor-borda: #DDE1E6;
+    --cor-sombra: rgba(0, 0, 0, 0.1);
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.container-grid {
+    flex-grow: 1;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "header header"
+        "menu content"
+        "footer footer";
+}
+
+.header {
+    grid-area: header;
+    background-color: var(--cor-primaria);
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+}
+
+.header h1 {
+    color: white;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.menu {
+    grid-area: menu;
+    background-color: #fff;
+    padding: 20px;
+    border-right: 1px solid var(--cor-borda);
+}
+
+.content {
+    grid-area: content;
+    padding: 30px;
+}
+
+.footer {
+    grid-area: footer;
+    background-color: #333;
+    color: #aaa;
+    text-align: center;
+    padding: 10px;
+}
+
+.menu h3 {
+    margin-top: 0;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu ul li a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #555;
+    border-radius: 4px;
+}
+
+.menu ul li a:hover {
+    background-color: var(--cor-fundo);
+}
+
+h1,
+h2,
+h3 {
+    color: var(--cor-primaria);
+}
+
+.btn {
+    background-color: var(--cor-primaria);
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+.btn-edit {
+    background-color: #ffc107;
+    color: black;
+    padding: 5px 10px;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.btn-delete {
+    background-color: #f44336;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.btn:hover,
+.btn-edit:hover,
+.btn-delete:hover {
+    opacity: 0.9;
+}
+
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    transition: opacity 0.5s ease-out;
+}
+
+.fade-out {
+    opacity: 0;
+}
+
+.alert-success {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+
+.alert-danger {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
+
+.obras-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.obra-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+
+}
+
+.obra-card-link:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px var(--cor-sombra);
+}
+
+.obra-card {
+    background-color: var(--cor-fundo-card);
+    border: 1px solid var(--cor-borda);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px var(--cor-sombra);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.obra-card img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    display: block;
+}
+
+.obra-info {
+    padding: 15px;
+}
+
+.obra-info h3 {
+    margin-top: 0;
+    font-size: 1.2em;
+}
+
+.obra-info .nota {
+    font-weight: bold;
+    color: #f0ad4e;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.75em;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 10px;
+    width: fit-content;
+}
+
+.status-badge.em-andamento {
+    background-color: #007bff;
+}
+
+.status-badge.concluído {
+    background-color: #28a745;
+}
+
+.status-badge.interesse {
+    background-color: #6c757d;
+}
+
+.status-badge.abandonado {
+    background-color: #dc3545;
+}
+
+.form-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    align-items: flex-end;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="search"],
+.form-group input[type="number"],
+.form-group input[type="date"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+.checkbox-group {
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid var(--cor-borda);
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.checkbox-item input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+.view-obra-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.view-obra-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--cor-primaria);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.view-obra-content {
+    display: flex;
+    gap: 30px;
+}
+
+.view-obra-image {
+    flex: 0 0 300px;
+}
+
+.view-obra-image img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px var(--cor-sombra);
+}
+
+.view-obra-details {
+    flex: 1;
+}
+
+.view-obra-personal {
+    margin-top: 30px;
+    border-top: 1px solid var(--cor-borda);
+    padding-top: 20px;
+}
