@@ -22,6 +22,12 @@ Este é um projeto web desenvolvido como avaliação para a disciplina de Tópic
     - Preencha as variáveis de ambiente no arquivo `.env` (para o ambiente local, os valores padrão devem funcionar).
 
 3.  **Instale as dependências do PHP:**
+    - Via Docker
+    ```bash
+    docker run --rm -v "$(pwd):/app" composer/composer install
+    ```
+    
+    - Via Host (Caso tenha o composer instalado na máquina)
     ```bash
     composer install
     ```
